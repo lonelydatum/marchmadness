@@ -11,3 +11,11 @@
 	height: 69px;
 	@include pos(0, 188);
 }
+
+
+
+#legalBtn{	
+	@include pos(90, 224);	
+	width: 80px;
+	// opacity: 1;
+}
