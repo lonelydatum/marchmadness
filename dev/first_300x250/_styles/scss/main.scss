@@ -1,0 +1,13 @@
+@import '../../../_common/styles/common.scss';
+
+
+.o, .proline{
+	transform-origin: 300px 250px;
+	@include pos-scale(-150, -125, .5);
+}
+
+#olg{
+	width: 136px;
+	height: 69px;
+	@include pos(0, 188);
+}

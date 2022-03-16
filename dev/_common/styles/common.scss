@@ -23,12 +23,13 @@ a {
 body{
 	margin: 0;
 	padding: 0;
-	background-color: #dadada;
+	background-color: white;
 }
 
 
 
 #banner{
+	background-color: black;
 	width: 300px;
 	height: 250px;
 	overflow: hidden;
@@ -104,4 +105,8 @@ img{
 	bottom: 0;
 	opacity: .5;
 	background: linear-gradient(0deg, rgba(0, 0, 0, 0.6) 4%, rgba(0, 0, 0, 0) 52%);
+}
+
+#olg{
+	opacity: 0;
 }

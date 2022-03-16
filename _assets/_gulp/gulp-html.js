@@ -11,7 +11,7 @@ function buildTemplates(project, browserSync){
     var size = splitInfo[len-1].split("x");
     var width = size[0];
     var height = size[1];
-    var obj = {name: name, width:width, height:height};
+    var obj = {name: name, width:width, height:height, size:splitInfo[len-1]};
 
     return gulp.src("./dev/"+project+"/index.ejs")
 

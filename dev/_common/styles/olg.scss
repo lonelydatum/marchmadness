@@ -14,7 +14,7 @@
 	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 	padding: 10px;
 	font-size: 10px;
-	z-index: 90;
+	z-index: 900;
 	opacity: 0;
 	font-weight: normal;
 	line-height: 15px;
@@ -30,4 +30,17 @@
 	height: 25px;
 	background-color: red;
 	display: none;
+}
+
+
+#olg{
+	opacity: 0;
+}
+#bluewedge2, #redwedge2 {
+    visibility:hidden;
+}
+
+#bluewedge1, #redwedge1 {
+    transform-origin: 0% 100% !important;
+    @include prefix( translate(0px, 0px) scale(1, 0) );
 }
