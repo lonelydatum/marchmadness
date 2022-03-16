@@ -46,6 +46,7 @@ function log_free(projectName){
     
     const size = splited[splited.length-1]
 
+
     const name = splited[0]
     
 
@@ -68,7 +69,7 @@ function log_free(projectName){
         .pipe(replace('data:image/svg+xml;utf8', 'data:image/svg+xml;charset=utf-8'))
         .pipe(replace('<script type="text/javascript" src="http://localhost:48626/takana.js"></script>', ''))
         .pipe(replace("takanaClient.run({host: 'localhost:48626'});", ''))
-        .pipe(replace("../_common/images/"+size+"/", ''))
+        .pipe(replace("../_common/images/"+name+"/"+size+"/", ''))
         .pipe(replace(name+"/", ''))
         .pipe(replace("<title>", '<title>Created: '+moment().format('MMM D, h:mm')))
         .on("end", function(){

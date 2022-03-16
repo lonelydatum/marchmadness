@@ -11,8 +11,20 @@ gsap.defaults({
 	ease: "power4.out"
 });
 
+var READ = {
+	t1: 2.2,
+	t2: 2.7
+};
+
 var w = size.w;
 var h = size.h;
+
+TweenLite.set([".o", ".proline"], {
+	transformOrigin: size.w + "px " + size.h + "px",
+	x: -size.w / 2,
+	y: -size.h / 2,
+	scale: .5
+});
 
 CustomEase.create("custom", "M0,0 C0.14,0 0.234,0.438 0.264,0.561 0.305,0.728 0.4,1.172 0.55,1.172 0.652,1.172 0.722,1.102 0.77,1.024 0.834,0.93 0.89,0.946 0.916,0.946 0.952,0.946 1,1 1,1 ");
 
@@ -25,6 +37,44 @@ function olg() {
 
 	// tl.timeScale(2)
 
+	return tl;
+}
+
+function bb() {
+	var tl = init();
+	tl.from(".o", { duration: .3, scale: 1, ease: 'back.out', opacity: 0 }, "+=.2");
+	tl.add("proline", "+=.4");
+	tl.from(".o-shadow", { duration: .1, opacity: 0 }, "proline");
+	tl.from(".proline", { scale: 1, duration: .25, opacity: 0, ease: 'back.out' }, "proline");
+
+	tl.to(".proline", { duration: .2, opacity: 0 }, "+=1");
+
+	tl.add("t1-in");
+	tl.from(".t1a", { x: "-" + size.w, duration: .2 }, "t1-in");
+	tl.from(".t1b", { x: size.w, duration: .2 }, "t1-in");
+
+	tl.add("f1-out", "+=" + READ.t1);
+	tl.to(".t1a", { x: "-" + size.w, duration: .3 }, "f1-out");
+	tl.to(".t1b", { x: size.w, duration: .3 }, "f1-out");
+	tl.to([".o-shadow", ".proline", ".o"], { duration: .1, opacity: 0 }, "f1-out");
+
+	tl.from(".bring", { duration: .25, x: "-=100", opacity: 0 });
+	tl.add(chev());
+	return tl;
+}
+
+function bb2() {
+	var tl = init();
+	tl.from(".t2", { duration: .3, opacity: 0 }, "+=.5");
+	tl.to(".t2", { duration: .3, opacity: 0 }, "+=" + READ.t2);
+
+	tl.add("cta", "+=.2");
+
+	tl.from(".cta", { duration: .3, opacity: 0 }, "cta");
+
+	tl.add("end", "+=.3");
+	tl.add(olg(), "end");
+	tl.from(".footer", { duration: .5, opacity: 0 }, "end");
 	return tl;
 }
 
@@ -56,44 +106,24 @@ exports.size = size;
 exports.init = init;
 exports.olg = olg;
 exports.chev = chev;
+exports.bb = bb;
+exports.bb2 = bb2;
+exports.READ = READ;
 
 },{}],2:[function(require,module,exports){
-'use strict';
+"use strict";
 
 var _commonJsCommonJs = require('../../_common/js/common.js');
 
-var tl = (0, _commonJsCommonJs.init)();
+function start() {
+	var tl = (0, _commonJsCommonJs.bb)();
 
-tl.from(".o", { duration: .3, scale: 1, ease: 'back.out', opacity: 0 }, "+=.2");
-tl.add("proline", "+=.4");
-tl.from(".o-shadow", { duration: .1, opacity: 0 }, "proline");
-tl.from(".proline", { scale: 1, duration: .25, opacity: 0, ease: 'back.out' }, "proline");
+	tl.from(".proline-end", { duration: .3, opacity: 0 }, "+=.2");
 
-tl.to(".proline", { duration: .2, opacity: 0 }, "+=1");
+	tl.add((0, _commonJsCommonJs.bb2)());
+}
 
-tl.add("t1-in");
-tl.from(".t1a", { x: '-' + _commonJsCommonJs.size.w, duration: .2 }, "t1-in");
-tl.from(".t1b", { x: _commonJsCommonJs.size.w, duration: .2 }, "t1-in");
-
-tl.add("f1-out", "+=2.2");
-tl.to(".t1a", { x: '-' + _commonJsCommonJs.size.w, duration: .3 }, "f1-out");
-tl.to(".t1b", { x: _commonJsCommonJs.size.w, duration: .3 }, "f1-out");
-tl.to([".o-shadow", ".proline", ".o"], { duration: .1, opacity: 0 }, "f1-out");
-
-tl.from(".bring", { duration: .25, x: "-=100", opacity: 0 });
-tl.add((0, _commonJsCommonJs.chev)());
-
-tl.from(".proline-end", { duration: .3, opacity: 0 }, "+=.2");
-tl.from(".t2", { duration: .3, opacity: 0 }, "+=.5");
-tl.to(".t2", { duration: .3, opacity: 0 }, "+=2.7");
-
-tl.add("cta", "+=.2");
-
-tl.from(".cta", { duration: .3, opacity: 0 }, "cta");
-
-tl.add("end", "+=.3");
-tl.add((0, _commonJsCommonJs.olg)(), "end");
-tl.from(".footer", { duration: .5, opacity: 0 }, "end");
+start();
 
 module.exports = {};
 
