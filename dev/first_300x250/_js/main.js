@@ -25,12 +25,13 @@ tl.from(".bring",  {duration:.25, x:"-=100", opacity:0})
 tl.add(chev())
 
 
-tl.from(".t2",  {duration:.3, opacity:0}, "+=.3")
+tl.from(".proline-end",  {duration:.3, opacity:0}, "+=.2")
+tl.from(".t2",  {duration:.3, opacity:0}, "+=.5")
 tl.to(".t2",  {duration:.3, opacity:0}, "+=2.7")
 
 
 tl.add("cta", "+=.2")
-tl.from(".end",  {duration:.3, opacity:0}, "cta")
+
 tl.from(".cta",  {duration:.3, opacity:0}, "cta")
 
 tl.add("end", "+=.3")
