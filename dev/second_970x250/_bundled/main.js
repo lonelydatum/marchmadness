@@ -162,20 +162,20 @@ function start() {
 	tl.to(".proline", { duration: .25, opacity: 0 }, "+=1");
 
 	tl.add("t1-in", "+=.2");
-	tl.from(".t1a", { duration: .15, opacity: 0, y: "-=200" }, "t1-in");
-	tl.from(".t1b", { duration: .15, opacity: 0, y: "+=200" }, "t1-in");
+	tl.from(".t1a", { duration: .2, opacity: 0, y: "-=200" }, "t1-in");
+	tl.from(".t1b", { duration: .2, opacity: 0, y: "+=200" }, "t1-in");
 
 	tl.add("t1-out", "+=" + _commonJsCommonJs.SECOND.t1);
-	tl.to(".t1a", { duration: .1, opacity: 0, y: "-=50" }, "t1-out");
-	tl.to(".t1b", { duration: .1, opacity: 0, y: "+=50" }, "t1-out");
+	tl.to(".t1a", { duration: .2, opacity: 0, y: "-=50" }, "t1-out");
+	tl.to(".t1b", { duration: .2, opacity: 0, y: "+=50" }, "t1-out");
 
 	tl.add("t2-in", "+=.2");
-	tl.from(".t1c", { duration: .15, opacity: 0, y: "-=200" }, "t2-in");
-	tl.from(".t1d", { duration: .15, opacity: 0, y: "+=200" }, "t2-in");
+	tl.from(".t1c", { duration: .2, opacity: 0, y: "-=200" }, "t2-in");
+	tl.from(".t1d", { duration: .2, opacity: 0, y: "+=200" }, "t2-in");
 
 	tl.add("t2-out", "+=" + _commonJsCommonJs.SECOND.t2);
-	tl.to(".t1c", { duration: .1, opacity: 0, y: "-=50" }, "t2-out");
-	tl.to(".t1d", { duration: .1, opacity: 0, y: "+=50" }, "t2-out");
+	tl.to(".t1c", { duration: .2, opacity: 0, y: "-=50" }, "t2-out");
+	tl.to(".t1d", { duration: .2, opacity: 0, y: "+=50" }, "t2-out");
 
 	tl.from(".bring", { scale: 1, duration: .25, opacity: 0, ease: 'back.out' }, "+=.2");
 	tl.to(".bring", { duration: .25, scale: .301, y: -175 }, "+=1.2");
