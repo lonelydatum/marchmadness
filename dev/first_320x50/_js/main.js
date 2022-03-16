@@ -19,7 +19,7 @@ function start(){
 	tl.to(".proline", {duration:.25, opacity:0}, "+=1")
 	
 
-	tl.add("t1-in", "+=.3")
+	tl.add("t1-in", "+=.2")
 	tl.from(".t1a", {duration:.15, opacity:0, y:"-=50"}, "t1-in")
 	tl.from(".t1b", {duration:.15, opacity:0, y:"+=50"}, "t1-in")
 

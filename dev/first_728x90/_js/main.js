@@ -17,7 +17,7 @@ function start(){
 	tl.from(".o",  {duration:.3, opacity:0}, "+=.2")
 	tl.from(".proline", {scale:1, duration:.25, opacity:0, ease:'back.out'}, "+=.2")
 	tl.to(".proline", {duration:.25, opacity:0}, "+=1")
-	tl.from(".t1", {duration:.25, opacity:0}, "+=.6")
+	tl.from(".t1", {duration:.25, opacity:0}, "+=.1")
 	tl.to(".t1", {duration:.25, opacity:0}, `+=${READ.t1}`)
 
 	tl.from(".bring", {scale:1, duration:.25, opacity:0, ease:'back.out'}, "+=.2")

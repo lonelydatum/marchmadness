@@ -129,7 +129,7 @@ function start() {
 	tl.from(".proline", { scale: 1, duration: .25, opacity: 0, ease: 'back.out' }, "+=.2");
 	tl.to(".proline", { duration: .25, opacity: 0 }, "+=1");
 
-	tl.add("t1-in", "+=.3");
+	tl.add("t1-in", "+=.2");
 	tl.from(".t1a", { duration: .15, opacity: 0, y: "-=200" }, "t1-in");
 	tl.from(".t1b", { duration: .15, opacity: 0, y: "+=200" }, "t1-in");
 
